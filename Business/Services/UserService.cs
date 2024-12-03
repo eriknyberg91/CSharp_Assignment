@@ -1,22 +1,29 @@
 ﻿using System.Collections;
 using Business.Interfaces;
+using Business.Models;
 
 namespace Business.Services;
 
 public class UserService : IUserService
 {
-    public void AddUserToList()
+    private readonly List<User> _users;
+    
+    public UserService ()
     {
-        throw new NotImplementedException();
+        _users = new List<User> (); //Ersätt med hämtning av users från fil när fileservice är på plats
     }
 
-    public void CreateUser()
+    public void CreateUser(User user)
     {
-        throw new NotImplementedException();
+        user.Id = Guid.NewGuid().ToString();
+        _users.Add(user);
     }
 
-    public IEnumerable GetUsersFromList()
+
+    public IEnumerable<User> GetUsersFromList()
     {
-        throw new NotImplementedException();
+        return _users;
     }
+
+    
 }
