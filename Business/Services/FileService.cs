@@ -7,10 +7,10 @@ public class FileService : IFileService
     private string _directoryPath;
     private string _filePath;
 
-    public FileService(string directoryPath = "Data", string fileName = "content.json") //Parameterar bidrar med default ifall annat inte fylls i
+    public FileService(string directoryPath = "Data", string fileName = "content.json")
     {
         _directoryPath = directoryPath;
-        _filePath = Path.Combine(_directoryPath, fileName); // Skapar sökväg(?) till filen
+        _filePath = Path.Combine(_directoryPath, fileName); 
     }
 
 
@@ -31,7 +31,8 @@ public class FileService : IFileService
     public void SaveToFile(string data)
     {
         if (!Directory.Exists(_directoryPath))
-        {
+        {   
+            Directory.CreateDirectory(_directoryPath);
             using var streamWriter = new StreamWriter(_filePath);
             streamWriter.WriteLine(data);
 

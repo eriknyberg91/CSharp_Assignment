@@ -10,6 +10,7 @@ var host = Host.CreateDefaultBuilder()
     {
         services.AddSingleton<IUserService, UserService>();
         services.AddSingleton<IMainMenuDialog, MainMenuDialog>();
+        services.AddSingleton<IFileService, FileService>();
     })
     .Build();
 
