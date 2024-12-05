@@ -35,31 +35,100 @@ public class MainMenuDialog(IUserService userService) : IMainMenuDialog
     void CreateUserOption()
     {
         var user = new User();
-
         Console.Clear();
-        
+
         Console.WriteLine("------------- CREATE NEW USER ------------- ");
 
-        Console.Write("Enter First Name:");
-        user.FirstName = Console.ReadLine();
+        // First Name
+        while (true)
+        {
+            Console.Write("Enter First Name: ");
+            string firstName = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(firstName))
+            {
+                user.FirstName = firstName;
+                break;
+            }
+            Console.WriteLine("First name cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter Last Name:");
-        user.LastName = Console.ReadLine();
+        // Last Name
+        while (true)
+        {
+            Console.Write("Enter Last Name: ");
+            string lastName = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(lastName))
+            {
+                user.LastName = lastName;
+                break;
+            }
+            Console.WriteLine("Last name cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter Email:");
-        user.Email = Console.ReadLine();
+        // Email
+        while (true)
+        {
+            Console.Write("Enter Email: ");
+            string email = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                user.Email = email;
+                break;
+            }
+            Console.WriteLine("Email cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter Phonenumber:");
-        user.PhoneNumber = Console.ReadLine();
+        // Phone Number
+        while (true)
+        {
+            Console.Write("Enter Phone Number: ");
+            string phoneNumber = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                user.PhoneNumber = phoneNumber;
+                break;
+            }
+            Console.WriteLine("Phone number cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter Street Address");
-        user.StreetAddress = Console.ReadLine();
+        // Street Address
+        while (true)
+        {
+            Console.Write("Enter Street Address: ");
+            string streetAddress = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(streetAddress))
+            {
+                user.StreetAddress = streetAddress;
+                break;
+            }
+            Console.WriteLine("Street address cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter Postal Code:");
-        user.PostalCode = Console.ReadLine();
+        // Postal Code
+        while (true)
+        {
+            Console.Write("Enter Postal Code: ");
+            string postalCode = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(postalCode))
+            {
+                user.PostalCode = postalCode;
+                break;
+            }
+            Console.WriteLine("Postal code cannot be empty. Please try again.");
+        }
 
-        Console.Write("Enter City:");
-        user.City = Console.ReadLine();
+        // City
+        while (true)
+        {
+            Console.Write("Enter City: ");
+            string city = Console.ReadLine()!.Trim();
+            if (!string.IsNullOrWhiteSpace(city))
+            {
+                user.City = city;
+                break;
+            }
+            Console.WriteLine("City cannot be empty. Please try again.");
+        }
 
         _userService.CreateUser(user);
     }
