@@ -2,6 +2,6 @@
 
 public interface IFileService
 {
-    string GetFile();
     void SaveToFile(string data);
+    string GetFile();
 }

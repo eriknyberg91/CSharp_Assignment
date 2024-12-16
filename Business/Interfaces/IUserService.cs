@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using Business.Models;
+﻿using Business.Models;
 
 namespace Business.Interfaces;
 
 public interface IUserService
 {
-    void CreateUser(User user); 
-
-    IEnumerable<User> GetUsersFromList(); 
+    void CreateUser(User user);
+    IEnumerable<User> GetUsersFromList();
 }

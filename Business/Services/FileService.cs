@@ -37,5 +37,12 @@ public class FileService : IFileService
             streamWriter.WriteLine(data);
 
         }
+
+        else
+        {
+            using var streamWriter = new StreamWriter(_filePath);
+            streamWriter.WriteLine(data);
+
+        }
     }
 }
